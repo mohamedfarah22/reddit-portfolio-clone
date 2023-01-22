@@ -1,0 +1,45 @@
+.header-containter{
+   background-color: white;
+   justify-content: space-evenly;
+   display: flex;
+}
+.reddit-logo{
+    height: 50px;
+    width: 50px;
+    padding-right: 600px;
+}
+.login-logo{
+    height: 100%;
+    width: 50px;
+    padding-left: 600px;
+}
+.searchBar{
+    padding-top: 15px;
+    
+}
+form.searchBar input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+    height: 10px;
+  }
+  form.searchBar button {
+    float: left;
+    width: 30%;
+    
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+   
+  }
+  form{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
