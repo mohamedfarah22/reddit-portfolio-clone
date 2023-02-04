@@ -1,16 +1,21 @@
 import React from 'react';
-
-import { Counter } from './features/counter/Counter';
+import { Header } from './features/Header/Header.jsx'
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
+  return(
+    <div className="app container">
+    <Header />
+    <div className="body-container">
+    <main>
+      <h1>Home</h1>
+    </main>
+    <aside>
+      <div>Aside</div>
+    </aside>
     </div>
-  );
+    </div>
+  )
 }
 
 export default App;
