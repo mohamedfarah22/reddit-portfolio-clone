@@ -10,8 +10,8 @@ main{
 }
 .body-container{
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 8fr 1fr;
 }
-
-
-
+aside{
+  background-color:	#F5F5F5;
+}
