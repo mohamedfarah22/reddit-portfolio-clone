@@ -11,7 +11,7 @@ function App() {
       <h1>Home</h1>
     </main>
     <aside>
-      <div>Aside</div>
+      <div>As</div>
     </aside>
     </div>
     </div>
