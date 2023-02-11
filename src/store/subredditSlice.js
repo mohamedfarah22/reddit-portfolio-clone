@@ -54,4 +54,4 @@ const loadSubreddits = () =>{
     } 
 }
 
-export const selectSubreddits = (state) => state.subreddits;
+export const selectSubreddits = (state) => state.subreddit.subreddits;
