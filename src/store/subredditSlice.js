@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit";
 import { pureFinalPropsSelectorFactory } from "react-redux/es/connect/selectorFactory";
 import { getSubreddit} from "../api/reddit";
 
@@ -31,3 +31,27 @@ const subredditSlice = createSlice({
     }
 })
 
+//export actions of slice object
+
+export const {getSubredditSuccess, startGetSubreddit, getSubredditFailed} = subredditSlice.actions;
+
+//export reducer function
+
+export default subredditSlice.reducer;
+
+//get subreddits thunk
+
+const loadSubreddits = () =>{
+    return async(dispatch) => {
+        dispatch({type:'subredditSlice/startGetSubreddit'})
+        try{
+        const payload = await getSubreddit();
+        dispatch({type:'subredditSlice/getSubredditSuccess', payload: payload})
+        } catch(err){
+            dispatch({type: 'subredditSlice/getSubredditFailed', payload:err})
+        }
+
+    } 
+}
+
+export const selectSubreddits = (state) => state.subreddits;
