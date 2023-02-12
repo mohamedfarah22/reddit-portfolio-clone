@@ -18,7 +18,7 @@ export const getSubreditPosts = async (subreddit) =>{
 
 // get comments of a reddit post
 
-export const getPostComments = async (permaLink) =>{
+export  const getPostComments = async (permaLink) =>{
     const response = await fetch(`${rootUrl}${permaLink}.json`)
     const json = await response.json();
     return json[1].data.children((comment) => comment.data)
