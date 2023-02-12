@@ -41,7 +41,7 @@ export default subredditSlice.reducer;
 
 //get subreddits thunk
 
-const loadSubreddits = () =>{
+export const loadSubreddits = () =>{
     return async(dispatch) => {
         dispatch({type:'subredditSlice/startGetSubreddit'})
         try{
