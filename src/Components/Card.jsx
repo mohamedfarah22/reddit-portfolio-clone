@@ -3,8 +3,8 @@ export function Card(){
 
     return (
         <div>
-            <img src= {fitnessLogo}/>
-            <h1>r/fitness</h1>
+            <img src= {'https://a.thumbs.redditmedia.com/IrfPJGuWzi_ewrDTBlnULeZsJYGz81hsSQoQJyw6LD8.png'}/>
+            <h1>r/askReddit</h1>
         </div>
     )
 }
