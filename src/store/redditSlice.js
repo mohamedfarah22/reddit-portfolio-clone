@@ -35,7 +35,7 @@ const redditSlice = createSlice({
 export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess} = redditSlice.actions
 //getSubredditPosts middleware
 
-const loadPosts = (subreddit) =>{
+export const loadPosts = (subreddit) =>{
     return async(dispatch) =>{
         dispatch(startGetSubredditPosts())
         try{
