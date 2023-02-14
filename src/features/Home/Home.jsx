@@ -6,9 +6,9 @@ import { Posts } from "../../Components/postCards/Posts";
 export function Home(){
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
-
+    //assume subreddit is '/r/image
     useEffect(() =>{
-        dispatch(loadPosts());
+        dispatch(loadPosts('/r/image'));
     }, [dispatch])
 return(
     <Posts  posts = {posts}/>
