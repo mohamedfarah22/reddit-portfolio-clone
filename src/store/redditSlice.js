@@ -8,7 +8,7 @@ const initialState = {
     comments:[],
     isLoading: false,
     error: false,
-    currentSubreddit:'/r/home'
+    currentSubreddit:'/r/home/'
 }
 
 const redditSlice = createSlice({
@@ -51,4 +51,5 @@ export const loadPosts = (subreddit) =>{
 export default redditSlice.reducer;
 
 export const selectPosts = (state) => state.posts;
+//selector for current subreddit
 export const selectCurrentSubreddit = (state) => state.currentSubreddit;
