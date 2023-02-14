@@ -13,7 +13,7 @@ const subreddits = useSelector(selectSubreddits);
   }, [dispatch])
 
     return(
-      <div>
+      <div className = 'subreddits-container'>
         {subreddits.map(subreddit => {
           if(subreddit['header_img'] !== null){
           return <Card headerImg = {subreddit['header_img']} subredditName = {subreddit['display_name']}/>
