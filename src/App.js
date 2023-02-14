@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from './features/Header/Header.jsx'
 import { Subreddits } from './features/Subreddits/Subreddits.jsx';
 import './App.css';
+import { Home } from './features/Home/Home.jsx';
 
 function App() {
   return(
@@ -9,7 +10,7 @@ function App() {
     <Header />
     <div className="body-container">
     <main>
-      <h1>Home</h1>
+      <Home/>
     </main>
     <aside>
       <Subreddits />
