@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from './features/Header/Header.jsx'
+import { Subreddits } from './features/Subreddits/Subreddits.jsx';
 import './App.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <h1>Home</h1>
     </main>
     <aside>
-      <div>As</div>
+      <Subreddits />
     </aside>
     </div>
     </div>
