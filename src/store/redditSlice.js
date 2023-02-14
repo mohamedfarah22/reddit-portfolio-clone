@@ -51,3 +51,4 @@ export const loadPosts = (subreddit) =>{
 export default redditSlice.reducer;
 
 export const selectPosts = (state) => state.posts;
+export const selectCurrentSubreddit = (state) => state.currentSubreddit;
