@@ -1,4 +1,4 @@
-.card-container{
+.subreddits-card-container{
     display: flex;
     flex-flow: row wrap;
     height: auto; 
@@ -10,18 +10,29 @@
     align-items: baseline;
     padding-top: 5px;
     padding-bottom:5px;
+    min-width: 100%;
+    
 }
 .card-container:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
 }
 .header-img{
     max-width: 30%;
     padding-right: 10px;
     height: 50%;
     align-items: center;
+    padding-right: 5px;
 }
 .display-name-prefixed{
     font-weight: bold;
     font: Verdana;
-    font-size: 24px;
+    font-size: 12px;
+    padding-right: 5px;
+}
+.card-container{
+    display:flex;
+    min-width: 100%;
+    justify-content: space-around;
+    flex-flow: row wrap;
 }
