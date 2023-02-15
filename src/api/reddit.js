@@ -3,9 +3,8 @@ const rootUrl = 'https://www.reddit.com';
 //get subreddits
 
 export const getSubreddits = async ()=> {
-const response = await fetch(`${rootUrl}/subreddits.json`, {
-    'Content-Type':'application/json'
-})
+const response = await fetch(`${rootUrl}/subreddits.json`)
+
     const json = await response.json()
     return json.data.children.map((subreddit) => subreddit.data)
 };
