@@ -1,8 +1,12 @@
 import './Card.css';
 import {useSelector} from 'react-redux';
 import { selectSubreddits } from '../../store/subredditSlice';
+import { useState } from 'react';
 export function Card(props){
-    const subreddits = useSelector(selectSubreddits)
+    const [subreddit, setSubreddit] = useState('');
+
+    
+   
 
     return (
 
