@@ -1,9 +1,11 @@
-const rootUrl = 'www.reddit.com';
+const rootUrl = 'https://www.reddit.com';
 
 //get subreddits
 
 export const getSubreddits = async ()=> {
-    const response = await fetch(`${rootUrl}/subreddits.json`);
+const response = await fetch(`${rootUrl}/subreddits.json`, {
+    'Content-Type':'application/json'
+})
     const json = await response.json()
     return json.data.children.map((subreddit) => subreddit.data)
 };
@@ -18,9 +20,10 @@ export const getSubredditPosts = async (subreddit) =>{
 
 // get comments of a reddit post
 
-export  const getPostComments = async (permaLink) =>{
+export const getPostComments = async (permaLink) =>{
     const response = await fetch(`${rootUrl}${permaLink}.json`)
     const json = await response.json();
     return json[1].data.children((comment) => comment.data)
 
 }
+
