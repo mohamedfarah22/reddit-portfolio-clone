@@ -35,7 +35,7 @@ const redditSlice = createSlice({
     }
 
 })
-export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess} = redditSlice.actions
+export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit} = redditSlice.actions
 //getSubredditPosts middleware
 
 export const loadPosts = (subreddit) =>{
