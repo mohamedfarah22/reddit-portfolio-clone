@@ -8,7 +8,8 @@ const initialState = {
     comments:[],
     isLoading: false,
     error: false,
-    currentSubreddit:'/r/home'
+    currentSubreddit:'/r/home',
+    searchTerm:''
 }
 
 const redditSlice = createSlice({
@@ -27,8 +28,10 @@ const redditSlice = createSlice({
             state.isLoading=false;
             state.error = false;
             state.posts = action.payload
+        },
+        setCurrentSubreddit: (state, action) =>{
+        state.currentSubreddit = action.payload
         }
- 
     }
 
 })
