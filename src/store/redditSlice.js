@@ -8,7 +8,7 @@ const initialState = {
     comments:[],
     isLoading: false,
     error: false,
-    currentSubreddit:'/r/home/'
+    currentSubreddit:'/r/home'
 }
 
 const redditSlice = createSlice({
@@ -40,7 +40,7 @@ export const loadPosts = (subreddit) =>{
         dispatch(startGetSubredditPosts())
         try{
             const posts = await getSubredditPosts(subreddit)
-            dispatch(getSubredditPosts(posts))
+            dispatch({type:'redditSlice/getSubredditPostsSuccess', payload:posts})
 
         }catch(err){
             dispatch(getSubredditPostsFailed())
@@ -50,6 +50,6 @@ export const loadPosts = (subreddit) =>{
 
 export default redditSlice.reducer;
 
-export const selectPosts = (state) => state.posts;
+export const selectPosts = (state) => state.redditSlice.posts;
 //selector for current subreddit
-export const selectCurrentSubreddit = (state) => state.currentSubreddit;
+export const selectCurrentSubreddit = (state) => state.redditSlice.currentSubreddit;
