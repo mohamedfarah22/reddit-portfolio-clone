@@ -50,6 +50,7 @@ export const loadPosts = (subreddit) =>{
 
 export default redditSlice.reducer;
 
+//selector for posts
 export const selectPosts = (state) => state.redditSlice.posts;
 //selector for current subreddit
 export const selectCurrentSubreddit = (state) => state.redditSlice.currentSubreddit;
