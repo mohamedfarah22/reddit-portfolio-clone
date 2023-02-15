@@ -2,6 +2,7 @@ import './Header.css';
 import logo from '../../../src/logo.png';
 import loginLogo from'../../../src/login-logo.jpeg'
 import React, {useState} from 'react';
+
 export function Header(props){
 const [searchTerm, setSearchTerm] = useState('');
 //submit function needs to be completed.
