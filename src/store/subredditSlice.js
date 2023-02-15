@@ -1,6 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { pureFinalPropsSelectorFactory } from "react-redux/es/connect/selectorFactory";
-import { getSubreddit} from "../api/reddit";
+import { getSubreddits} from "../api/reddit";
 
 const initialState={
     subreddits:[],
@@ -13,7 +13,7 @@ const subredditSlice = createSlice({
     initialState,
     reducers: {
         getSubredditSuccess: (state,action) =>{
-            state.push(action.payload)
+            state.subreddits = action.payload;
             state.isLoading= false
             state.error= false
 
@@ -45,7 +45,7 @@ export const loadSubreddits = () =>{
     return async(dispatch) => {
         dispatch({type:'subredditSlice/startGetSubreddit'})
         try{
-        const payload = await getSubreddit();
+        const payload = await getSubreddits();
         dispatch({type:'subredditSlice/getSubredditSuccess', payload: payload})
         } catch(err){
             dispatch({type: 'subredditSlice/getSubredditFailed', payload:err})
@@ -54,4 +54,4 @@ export const loadSubreddits = () =>{
     } 
 }
 
-export const selectSubreddits = (state) => state.subreddit.subreddits;
+export const selectSubreddits = (state) => state.subRedditSlice.subreddits;
