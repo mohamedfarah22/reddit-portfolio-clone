@@ -6,11 +6,11 @@ main{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  background-color:#7CB9E8;
+  background-color:#a7adba;
 }
 .body-container{
   display: grid;
-  grid-template-columns: 8fr 1fr;
+  grid-template-columns: 5fr 1fr;
 }
 aside{
   background-color:	#F5F5F5;
