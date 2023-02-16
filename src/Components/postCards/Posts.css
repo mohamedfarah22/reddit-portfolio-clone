@@ -12,10 +12,14 @@
     border: 5px black;
     min-width: 90%;
     display: grid;
-    grid-template-columns: 1fr 15fr;
-    
-    
+    grid-template-columns: 1fr 20fr;
+ 
 
+}
+
+.post-container{
+    min-width: 100%;
+    background-color: #F5F5F5;
 }
 .post-container:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -33,6 +37,8 @@
     font-size: 18px;
     padding-right: 10px;
     padding-left: 10px;
+    word-wrap: break-word;
+   
 }
 .vote-container{
     display:inline-block;
