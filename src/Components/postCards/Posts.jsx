@@ -1,12 +1,15 @@
 import './Posts.css'
+
+
+
 export function Posts (props){
 
-    const onMouseOverHandlerUp =(e) =>{
+const onMouseOverHandlerUpVote =(e) =>{
     e.target.src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconActive_lritbcc3d6x11.png';
 
 }
 
-const onMouseOutHandlerUp = (e) =>{
+const onMouseOutHandlerUpVote = (e) =>{
     e.target.src = 'https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' 
 }
 
@@ -25,8 +28,8 @@ const onMouseOutHandlerDown = (e) =>{
             return(
     <div className = 'post-card-container'>
         <div className= "vote-container">
-                <img onMouseOver = {onMouseOverHandlerUp} onMouseOut = {onMouseOutHandlerUp} className='up-vote' src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/>
-                <img  onMouseOver = {onMouseOverHandlerDown} onMouseOut = {onMouseOutHandlerDown} className ='down-vote' src='https://styles.redditmedia.com/t5_2qnty/styles/postDownvoteIconInactive_cnbj1c0wj6x11.png' alt ='down-vote'/>
+                <button onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} className='up-vote'><img onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/></button>
+                <button  onMouseOver = {onMouseOverHandlerDown} onMouseOut = {onMouseOutHandlerDown} className ='down-vote'><img src='https://styles.redditmedia.com/t5_2qnty/styles/postDownvoteIconInactive_cnbj1c0wj6x11.png' alt ='down-vote'/></button>
         </div>
         <div className='post-container'>
             <h1 className='post-title'>{post.title}</h1>

@@ -50,4 +50,8 @@
     height: 30px;
     max-width: 30px;
 }
-
+.vote-container button{
+padding: 20px;
+border: none;
+background: none;
+}

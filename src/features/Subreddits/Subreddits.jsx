@@ -1,4 +1,4 @@
-import { Card } from "../../Components/Card";                                                                                                                                                                                                                                                                                                                               
+import {Card} from '../../Components/subredditCards/Card' ;                                                                                                                                                                                                                                                                                                                            
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from "react";
 import { loadSubreddits } from "../../store/subredditSlice";
