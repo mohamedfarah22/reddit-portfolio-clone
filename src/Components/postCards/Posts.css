@@ -20,6 +20,7 @@
 .post-container{
     min-width: 100%;
     background-color: #F5F5F5;
+    
 }
 .post-container:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -62,4 +63,19 @@ background: none;
     justify-content: center;
     margin: 0px 0px;
     padding-right: 2px;
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.image-container img{
+    width:300px;
+    height: 300px;    
+}
+
+.video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
