@@ -81,13 +81,27 @@ background: none;
 }
 .comment-icon-container{
     display: flex;
+    justify-content: flex-end;
+    flex-flow: row;
     
 }
 .comment-button{
-    width: 0px;
-    height:0px;
+border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  justify-self: flex-end;
+  padding-right: 10px
+  
 }
 .comment-button img{
     width: 30px;
     height: 30px;
+    
+}
+.num-comments{
+    padding-right: 15px;
+    font-style: 'vendata';
+    font-size: 16px;
+    padding-bottom: 10px;
 }

@@ -27,7 +27,7 @@ const onMouseOutHandlerDown = (e) =>{
             {
         props.posts.map((post) =>{
         
-        if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !== 'nsfw'){
+        if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !== 'nsfw' && post.thumbnail !== ''){
             return(
                 <div className = 'post-card-container'>
                 <div className= "vote-container">
@@ -43,8 +43,9 @@ const onMouseOutHandlerDown = (e) =>{
                 </div>
                 <div className = 'comment-icon-container'>
                 <button className="comment-button">
-                    <img src={commentIcon}/>
+                    <img src={commentIcon} alt="comment icon"/>
                 </button>
+                <p className='num-comments'>{post.num_comments}</p>
             </div>
                 </div>
                 
@@ -68,10 +69,11 @@ const onMouseOutHandlerDown = (e) =>{
                         <audio src={post.media.reddit_video.hls_url} type = "audio/mpeg"/>
                     </video>
                 </div>
-                <div className = "comment-icon-container">
+                <div className = 'comment-icon-container'>
                 <button className="comment-button">
-                    <img src={commentIcon}/>
+                    <img src={commentIcon} alt="comment icon"/>
                 </button>
+                <p className='num-comments'>{post.num_comments}</p>
             </div>
             </div>
             
@@ -89,10 +91,11 @@ const onMouseOutHandlerDown = (e) =>{
         <div className='post-container'>
             <h1 className='post-title'>{post.title}</h1>
             <p className = 'post-text'>{post.selftext}</p>
-            <div className="comment-icon-containter">
+            <div className='comment-icon-container'>
                 <button className="comment-button">
-                    <img  src={commentIcon}/>
+                    <img  src={commentIcon} alt="comment icon"/>
                 </button>
+                <p className='num-comments'>{post.num_comments}</p>
             </div>    
         </div>           
     </div>            
