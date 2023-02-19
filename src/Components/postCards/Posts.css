@@ -51,7 +51,15 @@
     max-width: 30px;
 }
 .vote-container button{
-padding: 20px;
+padding: 5px;
 border: none;
 background: none;
+}
+.post-score{
+    font: 'vendata';
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px;
+    padding-right: 2px;
 }

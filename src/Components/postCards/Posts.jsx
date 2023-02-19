@@ -29,6 +29,7 @@ const onMouseOutHandlerDown = (e) =>{
     <div className = 'post-card-container'>
         <div className= "vote-container">
                 <button onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} className='up-vote'><img onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/></button>
+                <p className = 'post-score'>{(post.ups)-(post.downs)}</p>
                 <button  onMouseOver = {onMouseOverHandlerDown} onMouseOut = {onMouseOutHandlerDown} className ='down-vote'><img src='https://styles.redditmedia.com/t5_2qnty/styles/postDownvoteIconInactive_cnbj1c0wj6x11.png' alt ='down-vote'/></button>
         </div>
         <div className='post-container'>
