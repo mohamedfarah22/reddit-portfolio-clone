@@ -31,11 +31,14 @@ const redditSlice = createSlice({
         },
         setCurrentSubreddit: (state, action) =>{
         state.currentSubreddit = action.payload
+        },
+        setSearchPhrase : (state, action) =>{
+            state.searchTerm=action.payload
         }
     }
 
 })
-export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit} = redditSlice.actions
+export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit, setSearchPhrase} = redditSlice.actions
 //getSubredditPosts middleware
 
 export const loadPosts = (subreddit) =>{
@@ -57,3 +60,9 @@ export default redditSlice.reducer;
 export const selectPosts = (state) => state.redditSlice.posts;
 //selector for current subreddit
 export const selectCurrentSubreddit = (state) => state.redditSlice.currentSubreddit;
+//selector function for search phrase
+export const selectSearchTerm = (state) => state.redditSlice.searchTerm
+//selectore for selecting filtered posts
+export const selectFilteredPosts = (filterFunc) => (state) =>{
+    return state.redditSlice.posts.filter(filterFunc)
+}
