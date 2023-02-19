@@ -1,4 +1,5 @@
 import './Posts.css'
+import commentIcon from "../../commentIcon.png";
 
 
 
@@ -40,7 +41,13 @@ const onMouseOutHandlerDown = (e) =>{
                 <div className = 'image-container'>
                     <img className="post-image" src={post.thumbnail} alt="post"  />
                 </div>
+                <div className = 'comment-icon-container'>
+                <button className="comment-button">
+                    <img src={commentIcon}/>
+                </button>
+            </div>
                 </div>
+                
             </div>  
             )
         }
@@ -61,7 +68,13 @@ const onMouseOutHandlerDown = (e) =>{
                         <audio src={post.media.reddit_video.hls_url} type = "audio/mpeg"/>
                     </video>
                 </div>
+                <div className = "comment-icon-container">
+                <button className="comment-button">
+                    <img src={commentIcon}/>
+                </button>
             </div>
+            </div>
+            
         </div>  
         )
         }
@@ -76,7 +89,12 @@ const onMouseOutHandlerDown = (e) =>{
         <div className='post-container'>
             <h1 className='post-title'>{post.title}</h1>
             <p className = 'post-text'>{post.selftext}</p>
-        </div>
+            <div className="comment-icon-containter">
+                <button className="comment-button">
+                    <img  src={commentIcon}/>
+                </button>
+            </div>    
+        </div>           
     </div>            
         ) 
             }    
