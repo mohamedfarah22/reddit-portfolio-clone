@@ -1,6 +1,6 @@
 import './Header.css';
-import logo from '../../../src/logo.png';
-import loginLogo from'../../../src/login-logo.jpeg'
+import logo from '../../logo.png'
+import loginLogo from'../../login-logo.jpeg'
 import React, {useState} from 'react';
 
 export function Header(props){
