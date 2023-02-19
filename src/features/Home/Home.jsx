@@ -8,7 +8,7 @@ import { selectFilteredPosts } from "../../store/redditSlice";
 import { selectSearchTerm } from "../../store/redditSlice";
 export function Home(){
     const searchTerm = useSelector(selectSearchTerm)
-    const filterFunc = (post) => post.title.toLowerCase().includes(searchTerm)
+    const filterFunc = (post) => post.title.toLowerCase().includes(searchTerm.toLowerCase())
     const posts = useSelector(selectPosts)
     const filteredPosts = useSelector(selectFilteredPosts(filterFunc))
     const currentSubreddit= useSelector(selectCurrentSubreddit)
