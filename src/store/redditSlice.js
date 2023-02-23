@@ -9,7 +9,8 @@ const initialState = {
     isLoading: false,
     error: false,
     currentSubreddit:'/r/home',
-    searchTerm:''
+    searchTerm:'',
+    selectedPost:{}
 }
 
 const redditSlice = createSlice({
@@ -34,11 +35,14 @@ const redditSlice = createSlice({
         },
         setSearchPhrase : (state, action) =>{
             state.searchTerm=action.payload
+        },
+        setSelectPost: (state, action) =>{
+            state.selectedPost = action.payload
         }
     }
 
 })
-export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit, setSearchPhrase} = redditSlice.actions
+export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit, setSearchPhrase, setSelectPost} = redditSlice.actions
 //getSubredditPosts middleware
 
 export const loadPosts = (subreddit) =>{
@@ -66,3 +70,5 @@ export const selectSearchTerm = (state) => state.redditSlice.searchTerm
 export const selectFilteredPosts = (filterFunc) => (state) =>{
     return state.redditSlice.posts.filter(filterFunc)
 }
+//selector for current post
+export const selectSelectedPost =  (state) => state.redditSlice.selectedPost
