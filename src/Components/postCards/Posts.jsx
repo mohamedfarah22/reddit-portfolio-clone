@@ -1,9 +1,13 @@
 import './Posts.css'
 import commentIcon from "../../commentIcon.png";
+import { Link } from 'react-router-dom';
+import { selectCurrentSubreddit } from '../../store/redditSlice';
+import { useSelector } from 'react-redux';
 
 
 
 export function Posts (props){
+    const currentSubreddit = useSelector(selectCurrentSubreddit)
 
 const onMouseOverHandlerUpVote =(e) =>{
     e.target.src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconActive_lritbcc3d6x11.png';
@@ -29,6 +33,7 @@ const onMouseOutHandlerDown = (e) =>{
         
         if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !== 'nsfw' && post.thumbnail !== ''){
             return(
+            <Link className="link-component" to = {`${post.permalink}`}>
                 <div className = 'post-card-container'>
                 <div className= "vote-container">
                         <button onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} className='up-vote'><img onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/></button>
@@ -42,18 +47,22 @@ const onMouseOutHandlerDown = (e) =>{
                     <img className="post-image" src={post.thumbnail} alt="post"  />
                 </div>
                 <div className = 'comment-icon-container'>
+            
                 <button className="comment-button">
                     <img src={commentIcon} alt="comment icon"/>
                 </button>
+            
                 <p className='num-comments'>{post.num_comments}</p>
             </div>
                 </div>
                 
             </div>  
+            </Link>
             )
         }
       if(post.is_video === true){
         return(
+        <Link className="link-component" to={`${post.permalink}`}>
        <div className = 'post-card-container'>
             <div className= "vote-container">
                     <button onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} className='up-vote'><img onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/></button>
@@ -77,11 +86,13 @@ const onMouseOutHandlerDown = (e) =>{
             </div>
             </div>
             
-        </div>  
+        </div> 
+        </Link> 
         )
         }
        else{
             return(
+    <Link className="link-component" to = {`${post.permalink}`}>
     <div className = 'post-card-container'>
         <div className= "vote-container">
                 <button onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} className='up-vote'><img onMouseOver = {onMouseOverHandlerUpVote} onMouseOut = {onMouseOutHandlerUpVote} src='https://styles.redditmedia.com/t5_2qnty/styles/postUpvoteIconInactive_n5ydt0uuj6x11.png' alt="up-vote"/></button>
@@ -98,7 +109,8 @@ const onMouseOutHandlerDown = (e) =>{
                 <p className='num-comments'>{post.num_comments}</p>
             </div>    
         </div>           
-    </div>            
+    </div>  
+    </Link>          
         ) 
             }    
               
