@@ -1,11 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { getSubredditPosts } from "../api/reddit";
-
+import { getPostComments } from "../api/reddit";
 //initialState of reddit slice;
 
 const initialState = {
     posts:[],
-    comments:[],
+    comments:{
+        isLoading:false,
+        error: false,
+        comments:[]
+    },
     isLoading: false,
     error: false,
     currentSubreddit:'/r/home',
@@ -38,11 +42,26 @@ const redditSlice = createSlice({
         },
         setSelectPost: (state, action) =>{
             state.selectedPost = action.payload
+        },
+        startGetPostComments: (state) =>{
+            state.comments.isLoading = true;
+            state.comments.error=false
+        },
+        getCommentsFailed: (state) =>{
+            state.comments.error=true
+            state.comments.isLoading = true;
+
+        },
+        getCommentsSuccess: (state, action) =>{
+            state.comments.error=false
+            state.comments.isLoading = false
+            state.comments.comments = action.payload
+
         }
     }
 
 })
-export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit, setSearchPhrase, setSelectPost} = redditSlice.actions
+export const {startGetSubredditPosts, getSubredditPostsFailed, getSubredditPostsSuccess, setCurrentSubreddit, setSearchPhrase, setSelectPost, startGetPostComments, getCommentsFailed, getCommentsSuccess} = redditSlice.actions
 //getSubredditPosts middleware
 
 export const loadPosts = (subreddit) =>{
@@ -58,6 +77,21 @@ export const loadPosts = (subreddit) =>{
     }
 }
 
+//get comments for post
+
+export const loadComments = (permaLink) => {
+return async(dispatch) =>{
+    dispatch(startGetPostComments())
+
+try{
+    const comments = await getPostComments(permaLink)
+    dispatch(getCommentsSuccess(comments))
+}catch(error){
+    dispatch(getCommentsFailed())
+
+}
+}
+}
 export default redditSlice.reducer;
 
 //selector for posts
