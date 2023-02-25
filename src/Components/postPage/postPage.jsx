@@ -1,7 +1,7 @@
 import { selectSelectedPost } from "../../store/redditSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react";
-
+import { Comments } from "../Comments/Comments";
 export function PostPage(){
 const post = useSelector(selectSelectedPost)
 const dispatch = useDispatch();
@@ -43,7 +43,7 @@ if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !==
                 </div>
                 
             </div>  
-
+            <Comments/>
         </div>
 
     )
@@ -70,6 +70,7 @@ if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !==
             </div>
             
         </div>
+        <Comments/>
         </div> 
         )
     }
@@ -88,6 +89,7 @@ if(post.thumbnail !== 'self' && post['is_video'] === false && post.thumbnail !==
                
         </div>           
     </div> 
+    <Comments />
     </div> 
         )
 }

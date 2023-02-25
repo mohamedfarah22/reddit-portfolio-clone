@@ -1,0 +1,44 @@
+.comment-container{
+    background-color: #E8E8E8;
+    border: 1px black;
+
+}
+.comment-text{
+    font: Verdana;
+    font-size: 18px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.comment-vote-container{
+   display: flex;
+    padding-left: 3px;
+    
+    justify-content: flex-end;
+   
+}
+
+.comment-vote-container img{
+    height: 30px;
+    max-width: 30px;
+}
+.comment-vote-container button{
+    padding: 5px;
+    border: none;
+    background: none;
+    }
+.comment-score{
+    font-style:Verdana;
+    font-size: 16px;
+
+ }
+ .author-name{
+    font-style: Verdana;
+    font-size: 16px;
+    font-weight:bold;
+ }
+ .author-name{
+    padding-left: 10px;
+    padding-top: 10px;
+ }

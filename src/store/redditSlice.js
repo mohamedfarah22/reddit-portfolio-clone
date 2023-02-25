@@ -106,3 +106,5 @@ export const selectFilteredPosts = (filterFunc) => (state) =>{
 }
 //selector for current post
 export const selectSelectedPost =  (state) => state.redditSlice.selectedPost
+//add selector for selecting comments
+export const selectComments = (state) => state.redditSlice.comments.comments
