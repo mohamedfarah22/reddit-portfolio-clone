@@ -1,5 +1,5 @@
 import { createSlice} from "@reduxjs/toolkit";
-import { pureFinalPropsSelectorFactory } from "react-redux/es/connect/selectorFactory";
+
 import { getSubreddits} from "../api/reddit";
 
 const initialState={

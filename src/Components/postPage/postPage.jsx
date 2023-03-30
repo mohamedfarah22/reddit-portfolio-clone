@@ -1,10 +1,10 @@
 import { selectSelectedPost } from "../../store/redditSlice"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector} from "react-redux"
 import { useEffect } from "react";
 import { Comments } from "../Comments/Comments";
 export function PostPage(){
 const post = useSelector(selectSelectedPost)
-const dispatch = useDispatch();
+
 useEffect(() =>{
 
 })

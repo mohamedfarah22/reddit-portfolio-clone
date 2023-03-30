@@ -1,12 +1,11 @@
 import './Posts.css'
 import commentIcon from "../../commentIcon.png";
-import { Link, Redirect } from 'react-router-dom';
-import { PostPage } from '../postPage/postPage';
+import { Link} from 'react-router-dom';
+
 import {  useDispatch } from 'react-redux';
 
 import { setSelectPost } from '../../store/redditSlice';
-import { BrowserRouter as Router, Route}from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 export function Posts (props){
 
